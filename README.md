@@ -7,11 +7,11 @@ The nvim folder contains my nvim configuration, all the plugins and custom key m
 
 ### Setup with
 
-- LazyVim
+- [LazyVim](https://www.lazyvim.org/)
 
 ### Color scheme
 
-- Catppuccin: a flavored color scheme
+- [Catppuccin](https://duckduckgo.com/?q=catpuccin+nvim&atb=v370-1&ia=web): a flavored color scheme
 
 ### Other plugins
 
