@@ -5,7 +5,6 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  -- stylua: ignore
   keys = {
     { "<leader>tt", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },
     { "<leader>tf", "<cmd>NvimTreeFindFile<CR>", desc = "Toggle file explorer and focus current file" },
@@ -23,6 +22,6 @@ return {
     },
   },
   config = function(_, opts)
-    require("nvim-tree").setup(ops)
+    require("nvim-tree").setup(opts)
   end,
 }
