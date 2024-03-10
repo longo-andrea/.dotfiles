@@ -1,3 +1,6 @@
+-- Disable some keymaps
+vim.api.nvim_del_keymap("n", "<leader><space>")
+
 local function try_window_jump(jump_direction, jump_count)
   local previous_window_number = vim.fn.winnr()
   vim.cmd(jump_count .. "wincmd " .. jump_direction)
