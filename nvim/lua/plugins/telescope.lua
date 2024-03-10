@@ -11,26 +11,33 @@ return {
       end,
     },
   },
-  -- stylua: ignore
   keys = {
     {
-      "<leader>pf",
-      function() require("telescope.builtin").find_files({ hidden = true }) end,
+      "<leader><Space>",
+      function()
+        require("telescope.builtin").find_files({ hidden = true })
+      end,
       desc = "Project Find file (cwd)",
     },
     {
-      "<leader>pF",
-      function() require("telescope.builtin").git_files({ show_untracked = true }) end,
+      "<leader>gf",
+      function()
+        require("telescope.builtin").git_files({ show_untracked = true })
+      end,
       desc = "Project Find file (gwd)",
     },
     {
-      "<leader>pg",
-      function() require("telescope.builtin").live_grep() end,
+      "<leader>lg",
+      function()
+        require("telescope.builtin").live_grep()
+      end,
       desc = "Project Grep string",
     },
     {
       "<leader>gs",
-      function() require("telescope.builtin").grep_string() end,
+      function()
+        require("telescope.builtin").grep_string()
+      end,
       desc = "Grep String under cursor",
     },
   },
@@ -56,10 +63,7 @@ return {
           },
         },
         preview = {
-          hide_on_startup = true,
-        },
-        layout_config = {
-          preview_width = 80,
+          hide_on_startup = false,
         },
         borderchars = {
           { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
