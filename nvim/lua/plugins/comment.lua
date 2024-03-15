@@ -4,7 +4,7 @@ return {
   config = true,
   opts = {
     toggler = {
-      line = "<C-c>",
+      line = "<C-,>",
     },
   },
 }
