@@ -1,5 +1,19 @@
--- Disable some keymaps
-vim.api.nvim_del_keymap("n", "<leader><space>")
+-- Custom keymaps
+
+-- Reproduce Cmd/Opt+Arrow(h/l) navigation
+vim.api.nvim_set_keymap("n", "<D-Left>", "0", { desc = "Go to the beginnig of line" })
+vim.api.nvim_set_keymap("n", "<D-h>", "0", { desc = "Go to the beginnig of line" })
+vim.api.nvim_set_keymap("n", "<D-Right>", "$", { desc = "Go to the end of line" })
+vim.api.nvim_set_keymap("n", "<D-l>", "$", { desc = "Go to the end of line" })
+
+vim.api.nvim_set_keymap("n", "<A-Left>", "b", { desc = "Navigate backward one word" })
+vim.api.nvim_set_keymap("n", "<A-h>", "b", { desc = "Navigate backward one word" })
+vim.api.nvim_set_keymap("n", "<A-Right>", "w", { desc = "Navigate forward one word" })
+vim.api.nvim_set_keymap("n", "<A-l>", "w", { desc = "Navigate forward one word" })
+
+-- Reproduce Cmd/Opt+Backspace deletion
+vim.api.nvim_set_keymap("n", "<D-Bs>", "d0", { desc = "Delete backward until the beginnig of the line" })
+vim.api.nvim_set_keymap("n", "<A-Bs>", "db", { desc = "Delete previous word" })
 
 local function try_window_jump(jump_direction, jump_count)
   local previous_window_number = vim.fn.winnr()
