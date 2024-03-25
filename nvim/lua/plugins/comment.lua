@@ -5,6 +5,11 @@ return {
   opts = {
     toggler = {
       line = "<C-,>",
+      block = "<C-A-,>",
+    },
+    opleader = {
+      line = "<C-,>",
+      block = "<C-A-,>",
     },
   },
 }
