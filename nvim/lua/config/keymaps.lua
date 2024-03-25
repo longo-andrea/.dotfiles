@@ -5,11 +5,19 @@ vim.api.nvim_set_keymap("n", "<D-Left>", "0", { desc = "Go to the beginnig of li
 vim.api.nvim_set_keymap("n", "<D-h>", "0", { desc = "Go to the beginnig of line" })
 vim.api.nvim_set_keymap("n", "<D-Right>", "$", { desc = "Go to the end of line" })
 vim.api.nvim_set_keymap("n", "<D-l>", "$", { desc = "Go to the end of line" })
+vim.api.nvim_set_keymap("v", "<D-Left>", "0", { desc = "Go to the beginnig of line" })
+vim.api.nvim_set_keymap("v", "<D-h>", "0", { desc = "Go to the beginnig of line" })
+vim.api.nvim_set_keymap("v", "<D-Right>", "$", { desc = "Go to the end of line" })
+vim.api.nvim_set_keymap("v", "<D-l>", "$", { desc = "Go to the end of line" })
 
 vim.api.nvim_set_keymap("n", "<A-Left>", "b", { desc = "Navigate backward one word" })
 vim.api.nvim_set_keymap("n", "<A-h>", "b", { desc = "Navigate backward one word" })
 vim.api.nvim_set_keymap("n", "<A-Right>", "w", { desc = "Navigate forward one word" })
 vim.api.nvim_set_keymap("n", "<A-l>", "w", { desc = "Navigate forward one word" })
+vim.api.nvim_set_keymap("v", "<A-Left>", "b", { desc = "Navigate backward one word" })
+vim.api.nvim_set_keymap("v", "<A-h>", "b", { desc = "Navigate backward one word" })
+vim.api.nvim_set_keymap("v", "<A-Right>", "w", { desc = "Navigate forward one word" })
+vim.api.nvim_set_keymap("v", "<A-l>", "w", { desc = "Navigate forward one word" })
 
 -- Reproduce Cmd/Opt+Backspace deletion
 vim.api.nvim_set_keymap("n", "<D-Bs>", "d0", { desc = "Delete backward until the beginnig of the line" })
