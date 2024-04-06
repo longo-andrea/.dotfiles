@@ -80,4 +80,4 @@ map("n", "<leader>qqs", "<cmd>wqa<cr>", { desc = "Save All" })
 -- Close current buffer
 map("n", "q", "<cmd>q!<CR>", { desc = "Quit file" })
 -- Close current buffer and save changes
-map("n", "<leader>qs", "<cmd>wqa<cr>", { desc = "Save and Quit" })
+map("n", "<leader>qs", "<cmd>wq<cr>", { desc = "Save and Quit" })
