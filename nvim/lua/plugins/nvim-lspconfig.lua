@@ -60,21 +60,6 @@ return {
       end,
     })
 
-    vim.diagnostic.config(opts.diagnostics)
-    vim.api.nvim_create_autocmd("CursorHold", {
-      callback = function()
-        local options = {
-          focusable = false,
-          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-          border = "rounded",
-          source = "always",
-          prefix = " ",
-          scope = "cursor",
-        }
-        vim.diagnostic.open_float(nil, options)
-      end,
-    })
-
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
       border = border,
     })
