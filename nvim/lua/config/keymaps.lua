@@ -13,6 +13,12 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Window navigation
+local function try_window_jump(jump_direction, jump_count)
+  local previous_window_number = vim.fn.winnr()
+  vim.cmd(jump_count .. "wincmd " .. jump_direction)
+  return vim.fn.winnr() ~= previous_window_number
+end
+
 local function try_window_jump_with_wrap(intended_jump_direction, opposite_direction)
   local jump_count = vim.v.count1
   return function()
