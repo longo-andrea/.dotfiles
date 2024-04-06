@@ -5,9 +5,25 @@ return {
     "lewis6991/gitsigns.nvim",
     "nvim-tree/nvim-web-devicons",
   },
-  opts = {},
-  config = function(_, opts)
+  opts = {
+    icons = {
+      buffer_index = true,
+      buffer_number = false,
+      button = "󰅙",
+
+      modified = { button = "󰴒" },
+      pinned = { button = "", filename = true },
+
+      inactive = {
+        separator = { left = "", right = "" },
+      },
+      separator = { left = "", right = "" },
+      separator_at_end = false,
+    },
+  },
+  config = function(_, options)
     local map = vim.api.nvim_set_keymap
+    local opts = { noremap = true, silent = true }
 
     -- Move to previous/next
     map("n", "<A-,>", "<Cmd>BufferPrevious<CR>", opts)
@@ -45,5 +61,7 @@ return {
     map("n", "<Space>bd", "<Cmd>BufferOrderByDirectory<CR>", opts)
     map("n", "<Space>bl", "<Cmd>BufferOrderByLanguage<CR>", opts)
     map("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>", opts)
+
+    require("barbar").setup(options)
   end,
 }

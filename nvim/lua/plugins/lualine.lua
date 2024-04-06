@@ -5,13 +5,13 @@ return {
   },
   opts = {
     options = {
-      theme = "catppuccin",
+      theme = "kanagawa",
       globalstatus = true,
-      section_separators = { left = "", right = "" },
-      component_separators = { left = "", right = "" },
+      section_separators = { left = "", right = "" },
+      component_separators = "",
     },
     sections = {
-      lualine_a = { "mode" },
+      lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
       lualine_b = {
         { "branch", icon = "" },
         {

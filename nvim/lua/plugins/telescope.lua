@@ -1,5 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
+  lazy = false,
   branch = "0.1.x",
   dependencies = {
     { "nvim-lua/plenary.nvim" },
@@ -27,7 +28,7 @@ return {
       desc = "Project Find file (gwd)",
     },
     {
-      "<leader>lg",
+      "<S-D-F>",
       function()
         require("telescope.builtin").live_grep()
       end,

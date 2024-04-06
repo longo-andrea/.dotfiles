@@ -9,11 +9,11 @@ return {
       "lua",
       "markdown",
       "markdown_inline",
-      "python",
       "query",
       "regex",
       "typescript",
       "vim",
+      "vue"
     },
   },
 }
