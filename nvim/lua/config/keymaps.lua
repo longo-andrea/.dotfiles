@@ -75,3 +75,5 @@ map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
 -- Close all buffers and quit NeoVim
 map("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Quit All" })
+-- Close current buffer
+map("n", "q", "<cmd>q!<CR>", { desc = "Quit file" })
