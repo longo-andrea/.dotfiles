@@ -66,6 +66,17 @@ map("v", "<leader>p", '"_dP', { desc = "Replace without yanking" })
 -- Delete without yanking
 map("v", "<leader>d", '"-d"', { desc = "Delete without yanking" })
 
+-- Replace all occurences of word under cursor
+local function replace_all_under_cursor()
+  local old_word = vim.fn.expand("<cword>")
+  local new_word = vim.fn.input("Replace " .. old_word .. " by? ", old_word)
+
+  if new_word ~= old_word and new_word ~= "" then
+    vim.cmd(":%s/\\<" .. old_word .. "\\>/" .. new_word .. "/g")
+  end
+end
+map("v", "<leader>rao", replace_all_under_cursor, { desc = "Replace all occurences of word under cursor" })
+
 -- FILE STATE
 -- New file
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
@@ -76,8 +87,6 @@ map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 -- Close all buffers and discard changes
 map("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Quit All" })
 -- Close all buffers and save changes
-map("n", "<leader>qqs", "<cmd>wqa<cr>", { desc = "Save All" })
--- Close current buffer
-map("n", "q", "<cmd>q!<CR>", { desc = "Quit file" })
+map("n", "<leader>waq", "<cmd>wqa<cr>", { desc = "Save All" })
 -- Close current buffer and save changes
-map("n", "<leader>qs", "<cmd>wq<cr>", { desc = "Save and Quit" })
+map("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and Quit" })
