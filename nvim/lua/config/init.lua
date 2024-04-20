@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("config.keymaps")
 require("lazy").setup("plugins", {
   install = {
-    colorscheme = { "kanagawa" },
+    colorscheme = { "tokyonight" },
   },
   change_detection = {
     enabled = true,
