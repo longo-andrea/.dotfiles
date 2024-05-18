@@ -5,15 +5,15 @@ return {
       local gitsigns = package.loaded.gitsigns
 
       local function map(mode, key, command, description)
-        vim.keymap.set(mode, key, command, { buffer = buffer, desc = description })
+        vim.keymap.set(mode, key, command, { buffer = buffer })
       end
 
       map("n", "<leader>tb", function()
         gitsigns.toggle_current_line_blame()
-      end, { desc = "toggle line blame" })
+      end)
       map("n", "<leader>gb", function()
         gitsigns.blame_line({ full = true })
-      end, "Blame Line")
+      end)
     end,
   },
 }

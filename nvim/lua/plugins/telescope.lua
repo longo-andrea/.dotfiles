@@ -28,7 +28,7 @@ return {
       desc = "Project Find file (gwd)",
     },
     {
-      "<S-D-F>",
+      "<leader><S-F>",
       function()
         require("telescope.builtin").live_grep()
       end,

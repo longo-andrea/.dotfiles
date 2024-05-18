@@ -34,20 +34,18 @@ map("n", "<C-l>", try_window_jump_with_wrap("l", "h"), { desc = "Jump to window 
 
 -- FILE NAVIGATION
 -- CMD/Options mapping
-map("n", "<A-h>", "b", { desc = "Previous word" })
-map("n", "<A-Left>", "b", { desc = "Previous word" })
-map("v", "<A-h>", "b", { desc = "Previous word" })
-map("v", "<A-Left>", "b", { desc = "Previous word" })
+map({ "n", "v", "i" }, "<A-h>", "\x1bb", { desc = "Previous word" })
+map({ "n", "v", "i" }, "<A-Left>", "\x1bb", { desc = "Previous word" })
 
-map("n", "<A-l>", "w", { desc = "Next word" })
-map("n", "<A-Right>", "w", { desc = "Next word" })
-map("v", "<A-l>", "w", { desc = "Next word" })
-map("v", "<A-Right>", "w", { desc = "Next word" })
+map({ "n", "v", "i" }, "<A-l>", "\x1bf", { desc = "Next word" })
+map({ "n", "v", "i" }, "<A-Right>", "\x1bf", { desc = "Next word" })
 
-map("n", "<D-Left>", "0", { desc = "Go to the beginning of line" })
-map("n", "<D-Right>", "$", { desc = "Go to the end of line" })
-map("v", "<D-Left>", "0", { desc = "Go to the beginning of line" })
-map("v", "<D-Right>", "$", { desc = "Go to the end of line" })
+map({ "n", "v" }, "<D-Left>", "0", { desc = "Go to the beginning of line" })
+map({ "n", "v" }, "<D-h>", "0", { desc = "Go to the beginning of line" })
+map({ "n", "v" }, "<D-Right>", "$", { desc = "Go to the end of line" })
+map({ "n", "v" }, "<D-l>", "$", { desc = "Go to the end of line" })
+
+map({ "n", "i" }, "<D-Backspace>", "\x1b \x7f", { desc = "Delete previous word" })
 
 -- FILE EDITING
 -- Move Lines
