@@ -7,8 +7,32 @@ local config = {}
 -- Apply default configuration
 config = wezterm.config_builder()
 
---  Key configuraio
+--  Key configuraion
+config.leader = { key = "b", mods = "CMD", timeout_milliseconds = 2000 }
 config.keys = {
+	-- Terminal
+	{
+		key = "LeftArrow",
+		mods = "CMD",
+		action = act({ SendString = "\x1bOH" }),
+	},
+	{
+		key = "RightArrow",
+		mods = "CMD",
+		action = act({ SendString = "\x1bOF" }),
+	},
+	{
+		key = "LeftArrow",
+		mods = "OPT",
+		action = act({ SendString = "\x1bb" }),
+	},
+	{
+		key = "RightArrow",
+		mods = "OPT",
+		action = act({ SendString = "\x1bf" }),
+	},
+	{ key = "Backspace", mods = "CMD", action = act.SendString("\x15") },
+
 	-- Pane
 	{ key = "x", mods = "CMD", action = act.CloseCurrentPane({ confirm = false }) },
 	{ key = "D", mods = "SHIFT|CMD", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
@@ -17,6 +41,10 @@ config.keys = {
 	{ key = "k", mods = "CMD", action = act.ActivatePaneDirection("Up") },
 	{ key = "h", mods = "CMD", action = act.ActivatePaneDirection("Left") },
 	{ key = "l", mods = "CMD", action = act.ActivatePaneDirection("Right") },
+	{ key = "j", mods = "CMD|ALT", action = act.AdjustPaneSize({ "Down", 5 }) },
+	{ key = "k", mods = "CMD|ALT", action = act.AdjustPaneSize({ "Up", 5 }) },
+	{ key = "h", mods = "CMD|ALT", action = act.AdjustPaneSize({ "Left", 5 }) },
+	{ key = "l", mods = "CMD|ALT", action = act.AdjustPaneSize({ "Right", 5 }) },
 
 	--  Tab
 	{ key = "t", mods = "CMD", action = act.SpawnTab("CurrentPaneDomain") },
@@ -29,6 +57,11 @@ config.keys = {
 config.color_scheme = "tokyonight"
 config.font = wezterm.font("JetBrains Mono")
 config.window_background_opacity = 0.9
+config.inactive_pane_hsb = {
+	saturation = 0.3,
+	brightness = 0.3,
+	hue = 1,
+}
 
 -- Startup configuration
 wezterm.on("gui-startup", function()
