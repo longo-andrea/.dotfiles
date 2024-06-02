@@ -6,5 +6,6 @@ return {
   config = function()
     vim.keymap.set("n", "<leader>h", require("grapple").toggle)
     vim.keymap.set("n", "<leader>H", require("grapple").toggle_tags)
+    vim.keymap.set("n", "<leader>rH", require("grapple").reset)
   end,
 }

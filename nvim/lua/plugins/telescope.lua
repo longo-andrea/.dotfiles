@@ -41,6 +41,13 @@ return {
       end,
       desc = "Grep String under cursor",
     },
+    {
+      "<leader>sb",
+      function()
+        require("telescope.builtin").buffers()
+      end,
+      desc = "Search open buffers",
+    },
   },
   opts = function()
     local file_ignore_patterns = { ".git/", "node_modules/*", "pnpm-lock", "yarn.lock" }

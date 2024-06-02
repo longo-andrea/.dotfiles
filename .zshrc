@@ -28,3 +28,8 @@ alias pm="pnpm"
 alias pdev="pnpm dev"
 alias pbuild="pnpm build"
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/administrator/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/administrator/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/administrator/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/administrator/Downloads/google-cloud-sdk/completion.zsh.inc'; fi

@@ -1,6 +1,9 @@
 # Alacritty's config file.
 # For more information, see https://alacritty.org/config-alacritty.html.
 
+[shell]
+program = "/usr/bin/zsh"
+
 [window]
 startup_mode = "Maximized"
 
