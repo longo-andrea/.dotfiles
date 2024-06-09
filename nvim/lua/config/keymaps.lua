@@ -33,19 +33,8 @@ map("n", "<C-k>", try_window_jump_with_wrap("k", "j"), { desc = "Jump to window 
 map("n", "<C-l>", try_window_jump_with_wrap("l", "h"), { desc = "Jump to window (right)" })
 
 -- FILE NAVIGATION
--- CMD/Options mapping
-map({ "n", "v", "i" }, "<A-h>", "\x1bb", { desc = "Previous word" })
-map({ "n", "v", "i" }, "<A-Left>", "\x1bb", { desc = "Previous word" })
-
-map({ "n", "v", "i" }, "<A-l>", "\x1bf", { desc = "Next word" })
-map({ "n", "v", "i" }, "<A-Right>", "\x1bf", { desc = "Next word" })
-
 map({ "n", "v" }, "<D-Left>", "0", { desc = "Go to the beginning of line" })
-map({ "n", "v" }, "<D-h>", "0", { desc = "Go to the beginning of line" })
 map({ "n", "v" }, "<D-Right>", "$", { desc = "Go to the end of line" })
-map({ "n", "v" }, "<D-l>", "$", { desc = "Go to the end of line" })
-
-map({ "n", "i" }, "<D-Backspace>", "\x1b \x7f", { desc = "Delete previous word" })
 
 -- FILE EDITING
 -- Move Lines
@@ -64,27 +53,14 @@ map("v", "<leader>p", '"_dP', { desc = "Replace without yanking" })
 -- Delete without yanking
 map("v", "<leader>d", '"-d"', { desc = "Delete without yanking" })
 
--- Replace all occurences of word under cursor
-local function replace_all_under_cursor()
-  local old_word = vim.fn.expand("<cword>")
-  local new_word = vim.fn.input("Replace " .. old_word .. " by? ", old_word)
-
-  if new_word ~= old_word and new_word ~= "" then
-    vim.cmd(":%s/\\<" .. old_word .. "\\>/" .. new_word .. "/g")
-  end
-end
-map("v", "<leader>rao", replace_all_under_cursor, { desc = "Replace all occurences of word under cursor" })
-
 -- FILE STATE
 -- New file
-map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
 -- Save file
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+map({ "i", "x", "n", "s" }, "<C-S>", "<cmd>w<cr><esc>", { desc = "Save File", noremap = false })
 
 -- Close all buffers and discard changes
 map("n", "<leader>qq", "<cmd>qa!<cr>", { desc = "Quit All" })
--- Close all buffers and save changes
-map("n", "<leader>waq", "<cmd>wqa<cr>", { desc = "Save All" })
--- Close current buffer and save changes
-map("n", "<leader>wq", "<cmd>wq<cr>", { desc = "Save and Quit" })
+
+-- Disable highlight on search (usually triggered by `/` or `?` commands).
+map("n", "<Esc>", "<CMD>nohlsearch<CR>", { desc = "Disable Highlight On Search" })
