@@ -11,6 +11,13 @@ return {
         require("telescope").load_extension("fzf")
       end,
     },
+    {
+      "nvim-telescope/telescope-live-grep-args.nvim",
+      version = "^1.0.0",
+      config = function()
+        require("telescope").load_extension("live_grep_args")
+      end,
+    },
   },
   keys = {
     {
@@ -21,25 +28,11 @@ return {
       desc = "Project Find file (cwd)",
     },
     {
-      "<leader>gf",
+      "<C-k>",
       function()
-        require("telescope.builtin").git_files({ show_untracked = true })
-      end,
-      desc = "Project Find file (gwd)",
-    },
-    {
-      "<leader><S-F>",
-      function()
-        require("telescope.builtin").live_grep()
+        require("telescope").extensions.live_grep_args.live_grep_args()
       end,
       desc = "Project Grep string",
-    },
-    {
-      "<leader>gs",
-      function()
-        require("telescope.builtin").grep_string()
-      end,
-      desc = "Grep String under cursor",
     },
     {
       "<leader>sb",
@@ -50,19 +43,33 @@ return {
     },
   },
   opts = function()
-    local file_ignore_patterns = { ".git/", "node_modules/*", "pnpm-lock", "yarn.lock" }
-    local telescope_config = require("telescope.config")
-
-    local vimgrep_arguments = { unpack(telescope_config.values.vimgrep_arguments) }
-
-    table.insert(vimgrep_arguments, "--hidden")
-    table.insert(vimgrep_arguments, "--glob")
-    table.insert(vimgrep_arguments, "!**/.git/*")
+    local lga_actions = require("telescope-live-grep-args.actions")
 
     return {
+      extensions = {
+        live_grep_args = {
+          auto_quoting = true,
+          mappings = {
+            i = {
+              ["<C-k>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+              ["<A-k>"] = lga_actions.to_fuzzy_refine,
+            },
+          },
+        },
+
+        fzf = {
+          fuzzy = true,
+        },
+      },
+
       defaults = {
-        vimgrep_arguments = vimgrep_arguments,
-        file_ignore_patterns = file_ignore_patterns,
+        layout_config = {
+          preview_width = 80,
+          prompt_position = "top",
+        },
+
+        sorting_strategy = "ascending",
+
         mappings = {
           i = {
             ["<C-i>"] = function(...)
@@ -70,6 +77,7 @@ return {
             end,
           },
         },
+
         preview = {
           hide_on_startup = false,
         },
@@ -81,5 +89,13 @@ return {
         },
       },
     }
+  end,
+  config = function(_, opts)
+    local telescope = require("telescope")
+
+    telescope.setup(opts)
+
+    telescope.load_extension("fzf")
+    telescope.load_extension("live_grep_args")
   end,
 }
