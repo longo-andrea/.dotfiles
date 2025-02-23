@@ -30,19 +30,25 @@ return {
         footer = { "🚀 Skyrocket Productivity 🚀" },
         packages = { enable = false },
         project = { enable = false },
-        mru = { enable = true, limit = 10, label = "Recent opened files", cwd_only = true },
+        mru = { enable = true, limit = 9, label = "Recent opened files", cwd_only = true },
         shortcut = {
           {
-            desc = " Open .env",
+            desc = "🎛 Open .env",
             group = "Number",
             action = "e .env",
             key = "e",
           },
           {
-            desc = " Open package.json",
+            desc = "📦 Open package.json",
             group = "Number",
             action = "e package.json",
             key = "p",
+          },
+          {
+            desc = "🚪 Quit",
+            group = "Number",
+            action = "q!",
+            key = "q",
           },
         },
       },
