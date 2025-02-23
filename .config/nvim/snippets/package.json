@@ -20,6 +20,10 @@
           "vue"
         ],
         "path": "./html/base.json"
+      },
+      {
+        "language": "liquid",
+        "path": "./liquid/base.json"
       }
     ]
   }

@@ -20,9 +20,10 @@
     "body": [
       "<script setup lang=\"ts\">",
       "</script>",
+      "",
       "<template>",
       "\t<div>",
-      "",
+      "$0",
       "\t</div>",
       "</template>"
     ],
