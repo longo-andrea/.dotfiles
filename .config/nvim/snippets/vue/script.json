@@ -1,0 +1,14 @@
+{
+  "Define props with defaults": {
+    "prefix": "dprops",
+    "body": [
+      "const props = withDefaults(",
+      "\tdefineProps<{",
+      "$0:$1",
+      "\t}>(),",
+      "\t{}",
+      ")"
+    ],
+    "description": "Define props with defaults"
+  }
+}

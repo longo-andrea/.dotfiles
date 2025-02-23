@@ -1,0 +1,31 @@
+{
+  "templateLang": {
+    "prefix": "template",
+    "body": ["<template> ", "\t<div$2>", "\t\t$0", "\t</div>", "</template>"],
+    "description": "template element"
+  },
+  "script-ts-composition": {
+    "prefix": "script",
+    "body": ["<script setup lang=\"ts\">", "\t$0", "</script>"],
+    "description": "script setup vue with lang ts composition api element"
+  },
+  "styleScoped": {
+    "prefix": "style",
+    "body": ["<style scoped>", "\t$0", "</style>"],
+    "description": "style scoped vue attribute"
+  },
+
+  "Vue SFC base": {
+    "prefix": "vbase",
+    "body": [
+      "<script setup lang=\"ts\">",
+      "</script>",
+      "<template>",
+      "\t<div>",
+      "",
+      "\t</div>",
+      "</template>"
+    ],
+    "description": "Base for Vue File with SCSS"
+  }
+}

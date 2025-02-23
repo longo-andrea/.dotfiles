@@ -1,0 +1,26 @@
+{
+  "name": "example-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "vue"
+        ],
+        "path": "./vue/base.json"
+      },
+      {
+        "language": [
+          "vue"
+        ],
+        "path": "./vue/script.json"
+      },
+      {
+        "language": [
+          "html",
+          "vue"
+        ],
+        "path": "./html/base.json"
+      }
+    ]
+  }
+}
