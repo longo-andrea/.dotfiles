@@ -3,23 +3,25 @@ gui:
   expandFocusedSidePanel: false
   nerdFontsVersion: "3"
   border: single
+git:
+  parseEmoji: true
 customCommands:
   # Uses GitMoji on git commit
   - command: "git commit -m '{{ .Form.emoji }} {{ .Form.message }}'"
     context: "files"
-    description: Commit changes using gitmojis
-    key: C
+    description: "Commit changes using gitmojis"
+    key: "C"
     prompts:
-      - command: gitmoji -l
-        filter: ^(.*?) - (:.*?:) - (.*)$
-        key: emoji
+      - command: "gitmoji -l"
+        filter: "^(.*?) - (:.*?:) - (.*)$"
+        key: "emoji"
         labelFormat: "{{ .group_1 }} - {{ .group_3 }}"
         title: "Select a gitmoji:"
-        type: menuFromCommand
+        type: "menuFromCommand"
         valueFormat: "{{ .group_2 }}"
-      - key: message
+      - key: "message"
         title: "Enter a commit message:"
-        type: input
+        type: "input"
   # Uses `CTRL + f` to clean all local branches that no longer have a remote tracking
   - key: "<c-f>"
     context: "localBranches"
