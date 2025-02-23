@@ -8,3 +8,5 @@ fpath+=( $HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/history )
 source $HOME/Library/Caches/antidote/mattmc3/zephyr/plugins/history/history.plugin.zsh
 fpath+=( $HOME/Library/Caches/antidote/zsh-users/zsh-autosuggestions )
 source $HOME/Library/Caches/antidote/zsh-users/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+fpath+=( $HOME/Library/Caches/antidote/zsh-users/zsh-history-substring-search )
+source $HOME/Library/Caches/antidote/zsh-users/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh

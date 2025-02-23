@@ -41,5 +41,5 @@ if [ -f '/Users/administrator/Downloads/google-cloud-sdk/completion.zsh.inc' ]; 
 
 
 # https://github.com/zsh-users/zsh-history-substring-search.
-bindkey '^P' history-substring-search-up
-bindkey '^N' history-substring-search-down
+bindkey "^[[A" history-search-backward  # Arrow Up
+bindkey "^[[B" history-search-forward   # Arrow Down
