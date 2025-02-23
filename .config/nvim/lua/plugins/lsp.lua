@@ -50,7 +50,6 @@ return {
 
       -- Configure diagnostics floating window
       vim.diagnostic.config({
-        underline = false,
         float = {
           border = "single",
         },

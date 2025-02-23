@@ -5,6 +5,9 @@ return {
   priority = 1000,
   opts = {
     flavour = "mocha",
+    integrations = {
+      lsp_trouble = true,
+    },
   },
   config = function(_, opts)
     require("catppuccin").setup(opts)
