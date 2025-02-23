@@ -27,6 +27,8 @@ return {
 
         vue = { "prettierd", "eslint_d" },
         css = { "prettierd" },
+
+        liquid = { "prettierd" },
       },
     }
   end,
