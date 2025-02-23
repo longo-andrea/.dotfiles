@@ -1,15 +1,15 @@
 return {
   "numToStr/Comment.nvim",
   lazy = false,
-  config = true,
   opts = {
     toggler = {
-      line = "<A-,>",
-      block = "<A-/>",
+      line = "lc",
+      block = "bc",
     },
     opleader = {
-      line = "<C-,>",
-      block = "<C-A-,>",
+      line = "lc",
+      block = "bc",
     },
   },
+  config = true,
 }
