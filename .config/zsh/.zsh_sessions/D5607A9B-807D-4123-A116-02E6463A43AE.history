@@ -1,0 +1,18 @@
+cd ~/Development/tools/config
+./sync-config.sh
+cd ~/Development/tools/config
+./sync-config.sh
+g
+cd ~/Development/tool/config
+cd ~/Development/tools/config
+./sync-config.sh
+g
+g
+n
+pnpm 
+nvm -v
+npde -v
+node -v
+source ~/.zshrc
+nvm -v
+nvm

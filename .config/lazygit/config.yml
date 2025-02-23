@@ -1,0 +1,5 @@
+gui:
+  switchTabsWithPanelJumpKeys: true
+  expandFocusedSidePanel: false
+  nerdFontsVersion: "3"
+  border: single
