@@ -25,7 +25,7 @@ customCommands:
   # Uses `CTRL + f` to clean all local branches that no longer have a remote tracking
   - key: "<c-f>"
     context: "localBranches"
-    command: "git fetch --prune && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d"
+    command: "git fetch --prune && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
     loadingText: "Cleaning branches"
     prompts:
       - type: "confirm"

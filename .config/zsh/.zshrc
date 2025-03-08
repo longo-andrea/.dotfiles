@@ -1,3 +1,6 @@
+# Private variables
+source ~/.config/zsh/.zshprivate
+
 # Configuring homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 

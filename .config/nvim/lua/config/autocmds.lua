@@ -51,6 +51,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     -- Default LSP capabilities' keymaps.
+    map("n", "<leader>do", vim.diagnostic.open_float)
     map("n", "gd", vim.lsp.buf.definition)
     map("n", "gr", vim.lsp.buf.references)
     map("n", "K", function()
